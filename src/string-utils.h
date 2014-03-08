@@ -1,5 +1,5 @@
-//  string-utils.hpp
-//  A string manipulation library for C++
+//  string-utils.h
+//  A simple, lightweight string manipulation library for C++
 //  Author: Adam Harbin
 
 #include <vector>
