@@ -5,9 +5,6 @@
 #include <vector>
 #include <string>
 
-using std::vector;
-using std::string;
-
 namespace strutl {
-    vector<string> split(string strToSplit, string separator = "");
+    std::vector<std::string> split(std::string strToSplit, std::string separator = "");
 }

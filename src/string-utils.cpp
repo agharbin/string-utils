@@ -1,5 +1,8 @@
 #include "string-utils.h"
 
+using std::string;
+using std::vector;
+
 namespace strutl {
     vector<string> split(string strToSplit, string separator){
         vector<string> result;
