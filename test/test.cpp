@@ -8,6 +8,14 @@ using std::endl;
 
 using namespace strutl;
 
+bool testSeparatorNotFound() {
+    vector<string> splitStr = split("ABCDE", ":");
+    if(splitStr.size() != 1) { return false; }
+    if(splitStr[0] != "ABCDE") { return false; }
+    
+    return true;
+}
+
 bool testSplit() {
     vector<string> splitStr = split("A:B:C", ":");
     if(splitStr.size() != 3) { return false; }
@@ -50,4 +58,5 @@ int main() {
     test("Split: Simple Case", testSplit());
     test("Split: Empty String", testEmptyString());
     test("Split: Emtpy Separator", testEmptySeparator());
+    test("Split: Separator not found", testSeparatorNotFound());
 }
