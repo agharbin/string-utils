@@ -1,4 +1,4 @@
 string-utils
 ============
 
-A C++ string manipulation library
+A simple string manipulation library for C++
