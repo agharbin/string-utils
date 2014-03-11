@@ -8,6 +8,41 @@ using std::endl;
 
 using namespace strutl;
 
+bool testLStrip() {
+    string strippedStr = lstrip("aaabbcc","a");
+    if(strippedStr != "bbcc") { return false; }
+
+    return true;
+}
+
+bool testLStripEmtpyString() {
+    string strippedStr = lstrip("","a");
+    if(strippedStr.length() != 0) { return false; }
+
+    return true;
+}
+
+bool testLStripEmptyChars() {
+    string strippedStr = lstrip("aaabbcc","");
+    if(strippedStr != "aaabbcc") { return false; }
+    
+    return true;
+}
+
+bool testLStripDefaultValue() {
+    string strippedStr = lstrip("  aaabbcc");
+    if(strippedStr != "aaabbcc") { return false; }
+
+    return true;
+}
+
+bool testLStripAll() {
+    string strippedStr = lstrip("aaaaa","a");
+    if(strippedStr != "") { return false; }
+
+    return true;
+}
+
 bool testSeparatorNotFound() {
     vector<string> splitStr = split("ABCDE", ":");
     if(splitStr.size() != 1) { return false; }
@@ -59,4 +94,9 @@ int main() {
     test("Split: Empty String", testEmptyString());
     test("Split: Emtpy Separator", testEmptySeparator());
     test("Split: Separator not found", testSeparatorNotFound());
+    test("Left Strip: Simple Case", testLStrip());
+    test("Left Strip: Empty String", testLStripEmtpyString());
+    test("Left Strip: Empty Strip chars", testLStripEmptyChars());
+    test("Left Strip: Default parameter value", testLStripDefaultValue());
+    test("Left Strip: Strip All", testLStripAll());
 }

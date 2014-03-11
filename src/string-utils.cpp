@@ -36,4 +36,13 @@ namespace strutl {
         }
         return result;
     }
+
+    string lstrip(string strToStrip, string charsToStrip) {
+        string result;
+        size_t stripEndPos = strToStrip.find_first_not_of(charsToStrip);
+        if(stripEndPos != string::npos) {
+            result = strToStrip.substr(stripEndPos);
+        }
+        return result;
+    }
 }
