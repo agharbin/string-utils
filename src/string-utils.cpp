@@ -1,3 +1,9 @@
+//
+// string-utils.cpp
+//
+// A simple string manipulation library for C++
+// Author: Adam Harbin
+
 #include "string-utils.h"
 
 using std::string;
@@ -44,5 +50,19 @@ namespace strutl {
             result = strToStrip.substr(stripEndPos);
         }
         return result;
+    }
+
+    string rstrip(string strToStrip, string charsToStrip) {
+        string result;
+        size_t stripBeginPos = strToStrip.find_last_not_of(charsToStrip);
+        if(stripBeginPos != string::npos){
+            result = strToStrip.substr(0,stripBeginPos+1);
+        }
+
+        return result;
+    }
+
+    string strip(string strToStrip, string charsToStrip){
+        return rstrip(lstrip(strToStrip,charsToStrip),charsToStrip);
     }
 }

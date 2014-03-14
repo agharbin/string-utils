@@ -8,6 +8,41 @@ using std::endl;
 
 using namespace strutl;
 
+bool testStrip() {
+    string strippedStr = strip("aabbcc","ac");
+    if(strippedStr != "bb") { return false; }
+
+    return true;
+}
+
+bool testRStripEmptyString() {
+    string strippedStr = rstrip("","c");
+    if(strippedStr != "") { return false; }
+
+    return true;
+}
+
+bool testRStripEmptyChars() {
+    string strippedStr = rstrip("aabbcc","");
+    if(strippedStr != "aabbcc") { return false; }
+
+    return true;
+}
+
+bool testRStripAll() {
+    string strippedStr = rstrip("aabbcc","abc");
+    if(strippedStr != "") { return false; }
+
+    return true;
+}
+
+bool testRStrip() {
+    string strippedStr = rstrip("aabbcc","c");
+    if(strippedStr != "aabb") { return false; }
+
+    return true;
+}
+
 bool testLStrip() {
     string strippedStr = lstrip("aaabbcc","a");
     if(strippedStr != "bbcc") { return false; }
@@ -99,4 +134,9 @@ int main() {
     test("Left Strip: Empty Strip chars", testLStripEmptyChars());
     test("Left Strip: Default parameter value", testLStripDefaultValue());
     test("Left Strip: Strip All", testLStripAll());
+    test("Right Strip: Simple Case", testRStrip());
+    test("Right Strip: Empty String", testRStripEmptyString());
+    test("Right Strip: Empty Strip chars", testRStripEmptyChars());
+    test("Right Strip: Strip All", testRStripAll());
+    test("Strip: Simple Case", testStrip());
 }
