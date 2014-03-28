@@ -25,4 +25,7 @@ namespace strutl {
     // Strips characters from both the beginning and end of the string as 
     // in lstrip/rstrip
     std::string strip(std::string, std::string charsToStrip = " ");
+
+    // Removes all instances of the given characters from a string
+    std::string removec(std::string, std::string charsToRemove = " ");
 }

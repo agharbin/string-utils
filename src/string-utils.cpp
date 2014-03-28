@@ -6,6 +6,8 @@
 
 #include "string-utils.h"
 
+#include <iostream>
+
 using std::string;
 using std::vector;
 
@@ -64,5 +66,17 @@ namespace strutl {
 
     string strip(string strToStrip, string charsToStrip){
         return rstrip(lstrip(strToStrip,charsToStrip),charsToStrip);
+    }
+
+    string removec(string s, string chars) {
+        string result;
+
+        for(int i = 0; i < s.length(); i++){
+            if(chars.find(s[i]) == string::npos){
+                result += s[i];
+            }
+        }
+
+        return result;
     }
 }

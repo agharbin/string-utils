@@ -8,6 +8,20 @@ using std::endl;
 
 using namespace strutl;
 
+bool testRemoveMult() {
+    string s = removec("aabbaacccaaddd", "bcd");
+    if(s != "aaaaaa") { return false; }
+
+    return true;
+}
+
+bool testRemoveC() {
+    string s = removec("abaca","a");
+    if(s != "bc") { return false; }
+
+    return true;
+}
+
 bool testStrip() {
     string strippedStr = strip("aabbcc","ac");
     if(strippedStr != "bb") { return false; }
@@ -139,4 +153,6 @@ int main() {
     test("Right Strip: Empty Strip chars", testRStripEmptyChars());
     test("Right Strip: Strip All", testRStripAll());
     test("Strip: Simple Case", testStrip());
+    test("Remove Char: Simple Case", testRemoveC());
+    test("Remove Char: Multiple Chars", testRemoveMult());
 }
