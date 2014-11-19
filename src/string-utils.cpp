@@ -36,7 +36,7 @@ namespace strutl {
                 result.push_back(strToSplit.substr(substrBeginPos, string::npos));
             }
             else {
-                // Emtpy separator
+                // Empty separator
                 for(int i = 0; i < strToSplit.length(); i++){
                     result.push_back(strToSplit.substr(i, 1));
                 }
